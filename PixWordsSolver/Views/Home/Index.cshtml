@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "PixWords Bulgaria - Познавач на думи";
+}
+@model PixWordsSolver.ViewModels.GuessWordViewModel
+
+<div class="jumbotron">
+    <h2>PixWords Bulgaria - Познавач на думи</h2>
+    <h3>@ViewBag.Result</h3>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.Word)
+            @Html.TextBoxFor(m => m.Word, new { @class = "form-control", placeholder = "Дума" })
+            <span id="helpBlock" class="help-block">Попълнете празните места със звездичка. Пример *****к*</span>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Letters)
+            @Html.TextBoxFor(m => m.Letters, new { @class = "form-control", placeholder = "Букви" })
+            <span id="helpBlock" class="help-block">Пример чивагкдялит</span>
+        </div>
+        @Html.ValidationSummary()
+        ;
+        <button type="submit" class="btn btn-success">Познай</button>
+    }
+</div>

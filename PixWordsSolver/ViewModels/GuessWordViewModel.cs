@@ -10,7 +10,7 @@
         public string Word { get; set; }
 
         [DisplayName("Букви")]
-        [Required(ErrorMessage = "Полето БУКВИ е задължително")]
+        //[Required(ErrorMessage = "Полето БУКВИ е задължително")]
         public string Letters { get; set; }
     }
 }

@@ -5,6 +5,7 @@
 
 <div id="fb-root"></div>
 
+<div id="fb-root"></div>
 <script>
     (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
@@ -16,9 +17,10 @@
     }(document, 'script', 'facebook-jssdk'));
 </script>
 
+<div class="fb-like" data-href="https://www.facebook.com/PixWords-Bulgaria-%D0%9F%D0%BE%D0%B7%D0%BD%D0%B0%D0%B2%D0%B0%D1%87-%D0%BD%D0%B0-%D0%B4%D1%83%D0%BC%D0%B8-223496741338014/" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
 <div class="jumbotron">
     <h2>PixWords Bulgaria - Познавач на думи</h2>
-    <div class="fb-like pull-right" data-href="https://www.facebook.com/PixWords-Bulgaria-%D0%9F%D0%BE%D0%B7%D0%BD%D0%B0%D0%B2%D0%B0%D1%87-%D0%BD%D0%B0-%D0%B4%D1%83%D0%BC%D0%B8-223496741338014/" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true"></div>
+
     <h3 class="text-success">@ViewBag.Result</h3>
     @Html.ValidationSummary("", new { @class = "text-danger" })
     @using (Html.BeginForm("Index", "Home", FormMethod.Post))
@@ -30,9 +32,9 @@
         </div>
         <div class="form-group">
             @Html.LabelFor(m => m.Letters)
-            @Html.TextBoxFor(m => m.Letters, new { @class = "form-control", placeholder = "чивагкдялит", autocomplete="off"})
+            @Html.TextBoxFor(m => m.Letters, new { @class = "form-control", placeholder = "чивагкдялит", autocomplete = "off" })
             <span id="helpBlock" class="help-block">Пример чивагкдялит</span>
         </div>
-        <button type="submit" class="btn btn-success">Познай</button>
+            <button type="submit" class="btn btn-success">Познай</button>
     }
 </div>

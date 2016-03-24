@@ -20,9 +20,12 @@
         [HttpPost]
         public ActionResult Index(GuessWordViewModel model)
         {
+            model.Letters = model.Letters?.ToLower();
+            model.Word = model.Word?.ToLower();
+
             if (!this.ModelState.IsValid)
             {
-                return this.View();
+                return this.View(model);
             }
 
             var result = dic.Where(x => x.Length == model.Word.Length);
@@ -37,10 +40,17 @@
             }
             
             result = result.Where(x => x.All(y => model.Letters.IndexOf(y) != -1));
+
+            if (result.Any())
+            {
+                this.ViewBag.Result = string.Join(", ", result);
+            }
+            else
+            {
+                this.ViewBag.Result = "Думата не може да бъде открита.";
+            }
             
-            ViewBag.Result = string.Join(", ", result);
-            
-            return View();
+            return View(new GuessWordViewModel());
         }
     }
 }
